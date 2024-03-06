@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modatel | главная</title>
+    <link rel="icon" href="{% static '/img/logo.png' %}" type="image/icon type">
+
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- animation alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--- <link href="../static/css/tailwind.css" rel="stylesheet"> -->
+
+    <!-- start connect FONTS section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <!--  end connect FONTS section  -->
+
+    <!-- start settings TCHNO section -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                spacing: {
+                    '102': '25.5rem',
+                    '108': '27rem',
+                    '120': '30rem',
+                    '136': '34rem',
+                    '144': '36rem',
+                    '160': '40rem',
+                    '176': '44rem',
+                    '196': '48rem',
+                    '252': '63rem',
+                    '340': '85rem',
+                    '102px': '408px',
+                    '108px': '432px',
+                    '120px': '480px',
+                    '136px': '544px',
+                    '144px': '576px',
+                    '160px': '640px',
+                    '176px': '704px',
+                    '196px': '768px',
+                    '252px': '1008px',
+                    '340px': '1360px',
+
+                }
+            },
+            screens: {
+                'sm': '660px',
+                'md': '768px',
+                'lg': '1050px',
+                'xl': '1280px',
+                '2xl': '1536px',
+                '3xl': '1970px',
+                '4xl': '2100px',
+                '5xl': '2220px',
+            },
+          }
+        }
+    </script>
+    <!--  end settings TCHNO section  -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+<body style="overflow-x: hidden;" x-data="{ filterCategory_: false, filterMaterial_: false, filterPrice_: false, filterSize_: false, filterColor_: false, infPanelNew: window.innerWidth >= 760, darkBG: false}">
+    {% block header %}
+        {% include 'blocks/header.html' %}
+    {% endblock %}
+
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 md:mt-6 4xl:mt-10"> 
+        <div class="bg-white">
+            <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Contact Us</h2>
+                <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Возникла техническая проблема? Хотите отправить отзыв? Нужна подробная информация о нашем бизнес-плане? Сообщите нам об этом.</p>
+                <form method="post" action="{% url 'send_email' %}" class="space-y-8">
+                    {% csrf_token %}
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
+                        <input type="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" placeholder="name@gmail.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Тема:</label>
+                        <input type="text" name="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 shadow-sm" placeholder="theme_request" required>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Сообщение</label>
+                        <textarea name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 shadow-sm border border-gray-300" placeholder="your_comment"></textarea>
+                    </div>
+                    <button type="submit" value="Send" class="py-3 px-5 text-sm font-medium text-center text-black bg-white sm:w-fit hover:bg-primary-800 shadow-[0_3px_8px_1px_rgba(0,0,0,0.24)] hover:opacity-50 transition-all duration-200 ease-in-out">Send message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="3xl:mt-[12rem]"></div>
+
+    {% block footer %}
+        {% include 'blocks/footer.html' %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

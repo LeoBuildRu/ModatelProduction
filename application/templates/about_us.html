@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modatel | главная</title>
+    <link rel="icon" href="{% static '/img/logo.png' %}" type="image/icon type">
+
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- animation alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--- <link href="../static/css/tailwind.css" rel="stylesheet"> -->
+
+    <!-- start connect FONTS section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <!--  end connect FONTS section  -->
+
+    <!-- start settings TCHNO section -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                spacing: {
+                    '102': '25.5rem',
+                    '108': '27rem',
+                    '120': '30rem',
+                    '136': '34rem',
+                    '144': '36rem',
+                    '160': '40rem',
+                    '176': '44rem',
+                    '196': '48rem',
+                    '252': '63rem',
+                    '340': '85rem',
+                    '102px': '408px',
+                    '108px': '432px',
+                    '120px': '480px',
+                    '136px': '544px',
+                    '144px': '576px',
+                    '160px': '640px',
+                    '176px': '704px',
+                    '196px': '768px',
+                    '252px': '1008px',
+                    '340px': '1360px',
+
+                }
+            },
+            screens: {
+                'sm': '660px',
+                'md': '768px',
+                'lg': '1050px',
+                'xl': '1280px',
+                '2xl': '1536px',
+                '3xl': '1970px',
+                '4xl': '2100px',
+                '5xl': '2220px',
+            },
+          }
+        }
+    </script>
+    <!--  end settings TCHNO section  -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+<body style="overflow-x: hidden;" x-data="{ filterCategory_: false, filterMaterial_: false, filterPrice_: false, filterSize_: false, filterColor_: false, infPanelNew: window.innerWidth >= 760, darkBG: false}">
+    {% block header %}
+        {% include 'blocks/header.html' %}
+    {% endblock %}
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 md:mt-6 4xl:mt-16"> 
+        <div class="mx-auto w-full"><iframe class="w-full h-72 lg:h-136" allow="fullscreen" frameBorder="0" src="https://giphy.com/embed/4ey5cx5VcqvHZH4iqz/video"></iframe></div>
+    </section>
+
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 md:mt-6 4xl:mt-10 mb-16"> 
+        <div class="w-full mx-auto text-xl font-medium" style="font-family: 'Roboto Mono', monospace;">
+            <p>Ура-Ура-Ура! Смотрю вы долистали всё-таки до нашего раздела "О НАС". И так, а теперь коротко о том, что представляет из себя MODATEL <span style="white-space: nowrap;">(´｡• ᵕ •｡`)</span></p>
+            <p>
+                <br>
+            </p>
+            <p>MODATEL - модный дом одежды, основанный ещё в 2015 году - главной задачей которого было создать элегантную одежду элитного покроя по доступной цене. Сегодня ассортимент MODATEL насчитывает сотни эскизов, сотни продаж и несколько тысяч посещений сайта в день.</p>
+            <p>
+                <br>
+            </p>
+            <p>Каталог MODATEL с каждым годом, месяцем, днём всё продолжает увеличиваться, вводится множество интерактива за выполнение которого можно получить соответствующие награды, хе-хе.</p>
+            <p>
+                <br>
+            </p>
+            <p>а теперь дорогой читатель - бегом искать промокоды! И УДАЧНЫХ ТЕБЕ ПОКУПОК!!! <span style="white-space: nowrap;">o(>ω<)o</span></p>
+        </div>
+    </section>
+    {% block footer %}
+        {% include 'blocks/footer.html' %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let height_set_;
+        setTimeout(
+            () => {
+                height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+                document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+            }, 1 * 100);
+        $(window).resize(function() {
+            height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+            document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modatel | главная</title>
+    <link rel="icon" href="{% static '/img/logo.png' %}" type="image/icon type">
+
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- animation alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--- <link href="../static/css/tailwind.css" rel="stylesheet"> -->
+
+    <!-- start connect FONTS section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+    <!--  end connect FONTS section  -->
+
+    <!-- start settings TCHNO section -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                spacing: {
+                    '102': '25.5rem',
+                    '108': '27rem',
+                    '120': '30rem',
+                    '136': '34rem',
+                    '144': '36rem',
+                    '160': '40rem',
+                    '176': '44rem',
+                    '196': '48rem',
+                    '252': '63rem',
+                    '340': '85rem',
+                    '102px': '408px',
+                    '108px': '432px',
+                    '120px': '480px',
+                    '136px': '544px',
+                    '144px': '576px',
+                    '160px': '640px',
+                    '176px': '704px',
+                    '196px': '768px',
+                    '252px': '1008px',
+                    '340px': '1360px',
+
+                }
+            },
+            screens: {
+                'sm': '660px',
+                'md': '768px',
+                'lg': '1050px',
+                'xl': '1280px',
+                '2xl': '1536px',
+                '3xl': '1970px',
+                '4xl': '2100px',
+                '5xl': '2220px',
+            },
+          }
+        }
+    </script>
+    <!--  end settings TCHNO section  -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+<body style="overflow-x: hidden;">
+    {% block header %}
+        {% include 'blocks/header.html' %}
+    {% endblock %}
+    <section class="relative">
+        <img class="absolute w-80 sm:w-120 lg:w-144 3xl:w-160 4xl:w-176 5xl:w-196 left-0 -ml-12 md:ml-12 lg:ml-24 3xl:ml-36 4xl:ml-44 5xl:ml-64" src="{% static '/img/temporaryStorage/spot_2.png' %}" alt="">
+    </section>
+    <img id="rightABSblock" class="absolute w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px right-[8px] mt-96 mr-[0px] md:mr-[32px] lg:mr-[64px] 3xl:mr-[112px] 4xl:mr-[144px] 5xl:mr-[256px]" src="{% static '/img/temporaryStorage/spot_3.png' %}" alt="">
+    <img id="REFrightABSblock" class="TransporentClass absolute opacity-0 w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px left-0" src="{% static '/img/temporaryStorage/spot_3.png' %}" alt="">
+    <section class="flex flex-col w-full xl:flex-row md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4 md:mt-6 4xl:mt-10"> 
+        <div class="flex flex-col w-full xl:w-[calc(100%-27rem)] xl:pr-12">
+            <div id="MainUnitBlock" class="w-full swiper TopNewsSwiper">
+                <div class="swiper-wrapper mb-5">
+                    {% for item in MainUnit|slice:":2" %}
+                    <a href="post-page/{{item.unique_id}}" class="group swiper-slide">
+                        <div class="relative z-10 w-full h-48 md:h-72 4xl:h-96 bg-[url('{{ item.image.url }}')] bg-[length:80%] bg-center group-hover:bg-[length:72%] transition-all duration-200 ease-in-out"></div>
+                        <div class="relative flex w-full mt-2 sm:mt-6">
+                            <div class="flex flex-col w-full px-4 md:px-0 float-left tracking-[.15em]">
+                                <div class="text-2xl sm:text-3xl 3xl:text-4xl" style="font-family: 'Rubik Moonrocks', sans-serif;">{{ item.name }}</div>
+                                <div class="text-xl sm:text-2xl 3xl:text-2xl text-black text-opacity-30">{{ item.short_description }}</div>
+                            </div>
+   
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next mt-44 sm:mt-20 md:mt-32 4xl:mt-44"></div>
+                <div class="swiper-button-prev mt-44 sm:mt-20 md:mt-32 4xl:mt-44 mr-28" style="right: var(--swiper-navigation-sides-offset,10px); left: auto;"></div>
+                <div class="swiper-pagination -mb-6 sm:-mb-0 sm:-mt-10 whitespace-nowrap sm:mr-7 text-2xl font-medium tracking-[.25em]" style="width: min-content; right: var(--swiper-navigation-sides-offset,10px); left: auto; bottom: var(--swiper-pagination-bottom,39px);"></div>
+            </div>
+        </div>
+        <div class="flex flex-col xl:ml-auto">
+            <div id="RSideUnitBlock" class="bg-[#FFE7DC] shadow-[0_0_32px_-11px_rgba(0,0,0,0.3)_inset] xl:rounded-3xl relative scroller-ziro overflow-auto w-full xl:w-auto">
+                <div id="RSideSwiper" class="w-full">
+                    <div id="RSideSwiperWrapper" class="FlexCol_ xl:px-7 xl:py-7 lg:mb-5">
+                        {% for item in RSideUnit|slice:":2" %}
+                            <a href="post-page/{{item.unique_id}}" id="RSideSwiperSlide{{ item.id }}" class="group relative flex flex-col float-right w-full xl:w-auto pb-4">
+                                <div class="w-full xl:w-[22rem] h-36 bg-[url('{{ item.image.url }}')] bg-[length:100%] bg-center group-hover:bg-[length:85%] transition-all duration-200 ease-in-out"></div>
+                                <div class="mt-2 text-xl 3xl:text-2xl text-black font-black tracking-[.25em] px-4 xl:px-0" style="font-family: 'Roboto Mono', monospace;">{{ item.name }}</div>
+                                <div class="mt-1 text-lg 3xl:text-xl text-black font-black text-opacity-30 px-4 xl:px-0" style="font-family: 'Roboto Mono', monospace;">{{ item.short_description }}</div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="relative z-20 flex flex-col w-full xl:flex-row md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4 md:mt-6 4xl:mt-10"> 
+        <div class="w-full py-2 px-4 sm:px-10 font-semibold tracking-[0.45rem] text-2xl text-right shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]" style="font-family: 'Roboto Mono', monospace;">promotion</div>
+    </section>
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4"> 
+        <div class="w-full h-auto sm:pt-4 pb-0 3xl:pb-2 sm:px-2 sm:px-6" style="box-shadow: 0px 0px 18.3px -4px rgba(0, 0, 0, 0.25);">
+            <div class="w-full sm:mt-2 swiper PromotionSwiper">
+                <div class="swiper-wrapper mb-0 xl:mb-5">
+                    {% for item in PromoNews %}
+                    <div class="swiper-slide">
+                        <a class="flex flex-col group" href="post-page/{{item.unique_id}}">
+                            <div class="w-full h-36 lg:h-44 3xl:h-64 bg-[url('{{item.image.url}}')] bg-[length:100%] bg-center group-hover:bg-[length:85%] transition-all duration-200 ease-in-out"></div>
+                            <div class="px-2 sm:px-0">
+                                <div class="opacity-30 mt-3 text-xl font-medium tracking-[.25em]">{{item.subtheme}}</div>
+                                <div id="moving-text-container-{{item.id|safe}}" class="w-full h-12 relative -mt-2 text-xl lg:text-2xl font-black tracking-widest overflow-hidden" style="font-family: 'Roboto Mono', monospace;">
+                                    <div id="moving-text-{{item.id|safe}}" class="w-min" style="white-space: nowrap;">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-8" style="font-family: 'Roboto Mono', monospace;"> 
+        <div class="xl:px-10 xl:py-7 bg-[#FFE7DC] shadow-[0_0_32px_-11px_rgba(0,0,0,0.3)_inset]">
+            <div class="bg-white w-min whitespace-nowrap ml-6 lg:ml-0 mt-6 lg:mt-0 px-4 py-1 text-xl 3xl:text-2xl font-black">MOST VIEWED | (＠＾◡＾)</div>
+            <div class="w-48 3xl:w-56 h-2 3xl:h-3 ml-2 lg:ml-0 mt-2 sm:mt-6 bg-black"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 mt-2 sm:mt-6">
+                {% for item in postsMV|slice:":2" %}
+                    <div class="w-auto">
+                        <a class="flex flex-col group" href="post-page/{{item.unique_id}}">
+                            <div class="w-full h-36 lg:h-44 3xl:h-64 bg-[url('{{item.image.url}}')] bg-[length:100%] bg-center group-hover:bg-[length:85%] transition-all duration-200 ease-in-out"></div>
+                            <div class="px-2 lg:px-0">
+                                <div class="opacity-30 mt-3 text-xl font-medium tracking-[.25em]">{{item.subtheme}}</div>
+                                <div id="moving-text-container-{{item.id|safe}}" class="w-full h-12 relative -mt-2 text-xl lg:text-2xl font-black tracking-widest overflow-hidden" style="font-family: 'Roboto Mono', monospace;">
+                                    <div id="moving-text-{{item.id|safe}}" class="w-min" style="white-space: nowrap;">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="w-full mt-2 swiper MVSwiper">
+                <div class="swiper-wrapper mb-0">
+                    {% for item in postsMV|slice:"2:5" %}
+                    <div class="swiper-slide">
+                        <a class="flex flex-col group" href="post-page/{{item.unique_id}}">
+                            <div class="w-full h-36 lg:h-44 3xl:h-64 bg-[url('{{item.image.url}}')] bg-[length:100%] bg-center group-hover:bg-[length:85%] transition-all duration-200 ease-in-out"></div>
+                            <div class="px-2 lg:px-0">
+                                <div class="opacity-30 mt-3 text-xl font-medium tracking-[.25em]">{{item.subtheme}}</div>
+                                <div id="moving-text-container-{{item.id|safe}}" class="w-full h-12 relative -mt-2 text-xl lg:text-2xl font-black tracking-widest overflow-hidden" style="font-family: 'Roboto Mono', monospace;">
+                                    <div id="moving-text-{{item.id|safe}}" class="w-min" style="white-space: nowrap;">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="relative">
+        <img class="absolute w-80 sm:w-120 lg:w-144 3xl:w-160 4xl:w-176 5xl:w-196 left-0 -mt-64 -ml-12 md:ml-12 lg:ml-24 3xl:ml-36 4xl:ml-44 5xl:ml-64" src="{% static '/img/temporaryStorage/spot_1.png' %}" alt="">
+    </section>
+    <img id="rightABSblock_" class="absolute w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px right-[8px] mr-[0px] md:mr-[32px] lg:mr-[64px] 3xl:mr-[112px] 4xl:mr-[144px] 5xl:mr-[256px] -rotate-90" src="{% static '/img/temporaryStorage/spot_2.png' %}" alt="">
+    <img id="REFrightABSblock_" class="TransporentClass absolute opacity-0 w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px left-0 -rotate-90" src="{% static '/img/temporaryStorage/spot_3.png' %}" alt="">
+    <section class="relative flex md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4 sm:mt-10">
+        <div class="w-full swiper PostsSwiper">
+            <div class="absolute z-10 flex flex-col w-full ">
+                <div class="w-full h-1 border-t-2 border-solid border-black"></div>
+                <div class="bg-black text-white w-min ml-auto px-5 xl:px-10 py-1 text-xl xl:text-2xl 3xl:text-3xl tracking-[.30em] whitespace-nowrap">LATEST POSTS</div>
+            </div>
+            <div class="swiper-wrapper md:mt-5 xl:mt-10 mb-5">
+                {% for item in postsLST %}
+                    <div class="swiper-slide">
+                        <a class="group" href="post-page/{{item.unique_id}}">
+                            <div class="flex flex-col bg-white shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+                                <div class="h-32 lg:h-56 bg-[url('{{ item.image.url }}')] bg-[length:100%] bg-center group-hover:bg-[length:85%] transition-all duration-200 ease-in-out"></div>
+                                <div class="flex flex-col ml-6 my-2">
+                                    <div class="relative flex text-base 2xl:text-lg 3xl:text-xl py-1 h-16 overflow-hidden" style="font-family: 'Roboto Mono', monospace;">
+                                        <div class="absolute w-full" style="background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(88,88,167,0) 70%, rgba(0,212,255,0) 100%);"></div> 
+                                        {{ item.short_description }}
+                                    </div>
+                                    <div class="flex text-sm lg:text-base mr-6">
+                                        <div class="w-full float-left" style="font-family: 'Roboto Mono', monospace; font-weight: 100;">PHOTOS BY {{ item.photo_create }}</div>
+                                        <div class="w-min whitespace-nowrap float-right" style="font-family: 'Roboto Mono', monospace; font-weight: 100;">{{ item.created_date|safe|slice:":10" }}</div>
+                                    </div>
+                                    <div class="flex w-min py-1">
+                                        <div class="flex relative h-8 text-lg 3xl:text-xl font-medium" style="font-family: 'Roboto Mono', monospace; white-space: nowrap;">
+                                            <div class="opacity-0">Читать далее</div>
+                                            <div class="absolute bottom-0 top-0 my-auto">Читать далее</div> 
+                                            <img class="absolute right-0 group-hover:-mr-10 -mr-8 w-5 3xl:w-6 h-5 3xl:h-6 my-auto bottom-0 top-0 ml-3 transition-all duration-100 ease-in-out" src="{% static '/img/temporaryStorage/arrow-right.png' %}" alt=""> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
+    {% block footer %}
+        {% include 'blocks/footer.html' %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        if($(window).width() < 1050) {
+            console.log('abobus')
+            document.getElementById('RSideSwiper').classList.add('swiper', 'RSideSwiper')
+            document.getElementById('RSideSwiperWrapper').classList.add('swiper-wrapper')
+            {% for item in RSideUnit|slice:":2" %}
+                document.getElementById('RSideSwiperSlide{{ item.id }}').classList.add('swiper-slide')
+            {% endfor %}
+        }
+    </script>
+    <script>
+        var swiper = new Swiper(".TopNewsSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                1280: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".RSideSwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".PromotionSwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                660: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1050: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".MVSwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                550: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1050: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".PostsSwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                660: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                960: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        let height_set;
+        setTimeout(
+            () => {
+                if($(window).width() > 1280) {
+                    height_set = document.getElementById('MainUnitBlock').offsetHeight
+                    console.log(height_set)
+                    document.getElementById('RSideUnitBlock').setAttribute("style", `height:${height_set}px`)
+                    console.log(document.getElementById('RSideUnitBlock').offsetHeight)
+                }
+            }, 1 * 100);
+        $(window).resize(function() {
+            if($(window).width() > 1280) {
+                height_set = document.getElementById('MainUnitBlock').offsetHeight
+                document.getElementById('RSideUnitBlock').setAttribute("style", `height:${height_set}px`)
+            }
+        });
+    </script>
+    <script>
+        let height_set_;
+        setTimeout(
+            () => {
+                height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+                document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+            }, 1 * 100);
+        $(window).resize(function() {
+            height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+            document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+        });
+        setTimeout(
+            () => {
+                height_set_ = document.getElementById('REFrightABSblock_').offsetHeight
+                document.getElementById('rightABSblock_').setAttribute("style", `height:${height_set_}px`)
+            }, 1 * 100);
+        $(window).resize(function() {
+            height_set_ = document.getElementById('REFrightABSblock_').offsetHeight
+            document.getElementById('rightABSblock_').setAttribute("style", `height:${height_set_}px`)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modatel | главная</title>
+    <link rel="icon" href="{% static '/img/logo.png' %}" type="image/icon type">
+
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- animation alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--- <link href="../static/css/tailwind.css" rel="stylesheet"> -->
+
+    <!-- start connect FONTS section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+    <!--  end connect FONTS section  -->
+
+    <!-- start settings TCHNO section -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                spacing: {
+                    '102': '25.5rem',
+                    '108': '27rem',
+                    '120': '30rem',
+                    '136': '34rem',
+                    '144': '36rem',
+                    '160': '40rem',
+                    '176': '44rem',
+                    '196': '48rem',
+                    '252': '63rem',
+                    '340': '85rem',
+                    '102px': '408px',
+                    '108px': '432px',
+                    '120px': '480px',
+                    '136px': '544px',
+                    '144px': '576px',
+                    '160px': '640px',
+                    '176px': '704px',
+                    '196px': '768px',
+                    '252px': '1008px',
+                    '340px': '1360px',
+
+                }
+            },
+            screens: {
+                'sm': '660px',
+                'md': '768px',
+                'lg': '1050px',
+                'xl': '1280px',
+                '2xl': '1536px',
+                '3xl': '1970px',
+                '4xl': '2100px',
+                '5xl': '2220px',
+            },
+          }
+        }
+    </script>
+    <!--  end settings TCHNO section  -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+<body style="overflow-x: hidden;">
+    {% block header %}
+        {% include 'blocks/header.html' %}
+    {% endblock %}
+    <section class="relative">
+        <img class="absolute w-80 sm:w-120 lg:w-144 3xl:w-160 4xl:w-176 5xl:w-196 left-0 -ml-12 md:ml-12 lg:ml-24 3xl:ml-36 4xl:ml-44 5xl:ml-64 -rotate-90" src="{% static '/img/temporaryStorage/spot_1.png' %}" alt="">
+    </section>
+    <section class="relative z-10 sm:flex w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4 md:mt-6 4xl:mt-10">
+        <div id="MostPopUlar" class="flex flex-col w-full md:w-9/12 3xl:w-3/4 sm:pr-24">
+            <div class="h-auto text-3xl sm:text-4xl xl:text-5xl 3xl:text-7xl pb-4" style="font-family: 'Rock 3D', system-ui;">MOST POPULAR</div>
+            <div class="w-full h-64 xl:h-72 2xl:h-80 bg-[url('{% static '/img/temporaryStorage/footage.png' %}')] bg-[length:100%] bg-[left_-2rem] sm:bg-[left_-8rem] xl:bg-[left_-12rem] 3xl:bg-[left_-16rem]"></div>
+        </div>
+        <a href="#" id="viewAll" class="sm:absolute right-0 md:static flex bg-white w-full sm:w-3/12 3xl:w-1/4 shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+            <div class="flex my-auto mx-auto" style="font-family: 'Roboto Mono', monospace;">
+                <div class="text-xl xl:text-2xl font-medium py-2 md:py-0">view all</div>
+                <img class="ml-3 mt-3 md:mt-1 w-6 xl:w-7 h-6 xl:h-7" src="{% static '/img/temporaryStorage/arrow-right.png' %}" alt="">
+            </div>
+        </a>
+    </section>
+    <img id="rightABSblock" class="absolute w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px right-[8px] mt-36  mr-[0px] md:mr-[32px] lg:mr-[64px] 3xl:mr-[112px] 4xl:mr-[144px] 5xl:mr-[256px]" src="{% static '/img/temporaryStorage/spot_2.png' %}" alt="">
+    <img id="REFrightABSblock" class="TransporentClass absolute opacity-0 w-[320px] sm:w-120px lg:w-144px 3xl:w-160px 4xl:w-176px 5xl:w-196px left-0" src="{% static '/img/temporaryStorage/spot_2.png' %}" alt="">
+    <section class="relative z-10 flex w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4 md:mt-10 4xl:mt-16">
+        <div class="px-2 lg:px-10 py-6 w-full bg-[#FFE7DC] swiper TrendsSwiper">
+            <img class="absolute z-20 right-0 top-0 w-48 xl:w-56 3xl:w-64" src="{% static '/img/temporaryStorage/tablet.png' %}" alt="">
+            <div class="absolute z-30 right-0 top-0 text-xl xl:text-2xl 3xl:text-3xl text-white font-semibold tracking-[.25em] pt-1 pr-2">#TRENDES</div>
+            <div class="swiper-wrapper mb-5">
+                {% for prod in TrendsPosts %}
+                <div class="swiper-slide">
+                    <div class="relative overflow-hidden flex flex-col bg-white shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+                        <div class="relative overflow-hidden" href="detail-page/{{prod.unique_id}}"> 
+                            <img id="0imgSource_{{prod.id}}" class="imgSource_cls h-auto mx-auto" src="{{prod.image.url}}">
+                            <div id="0magnifier_{{prod.id}}" class="magnifier_cls w-36 3xl:w-44 h-56 3xl:h-64">
+                                <div class="absolute w-full h-full bg-white bg-opacity-50" style="z-index: 1000;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="relative">
+        <img class="absolute w-80 sm:w-120 lg:w-144 3xl:w-160 4xl:w-176 5xl:w-196 left-0 mt-72 -ml-12 md:ml-12 lg:ml-24 3xl:ml-36 4xl:ml-44 5xl:ml-64 rotate-90" src="{% static '/img/temporaryStorage/spot_3.png' %}" alt="">
+    </section>
+    <section class="relative z-10 FlexCol w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-6 lg:mt-10 4xl:mt-16">
+        <div class="FlexCol_ w-full lg:w-1/4" style="font-family: 'Roboto Mono', monospace;">
+            <div class="mt-0 lg:mt-10 ml-4 md:ml-0 lg:ml-10 text-2xl font-medium tracking-[.15em]">ГАЛЕРЕЯ</div>
+            <div class="mt-0 lg:mt-4 ml-7 sm:ml-20 text-3xl font-semibold tracking-[.25em]">MODATEL</div>
+        </div>
+        <div class="w-full lg:w-3/4 swiper ModatelGallerySwiper sm:rounded-3xl md:px-2 lg:px-5 sm:px-0 mt-2 md:mt-0">
+            <div class="swiper-wrapper mb-10">
+                {% for prod in ModatelGallery %}
+                <div class="swiper-slide">
+                    <div class="relative overflow-hidden flex flex-col bg-white rounded-3xl shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+                        <div class="relative overflow-hidden" href="#"> 
+                            <img id="1imgSource_{{prod.id}}" class="imgSource_cls h-auto mx-auto rounded-3xl" src="{{prod.image.url}}">
+                            <div id="1magnifier_{{prod.id}}" class="magnifier_cls w-36 3xl:w-44 h-56 3xl:h-64">
+                                <div class="absolute w-full h-full bg-white bg-opacity-50" style="z-index: 1000;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbarT"></div>
+        </div>
+    </section>
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4">
+        <div class="w-full h-1 border-t-2 border-solid border-black"></div>
+        <div class="bg-black text-white w-min px-10 py-1 text-2xl 3xl:text-3xl tracking-[.30em] whitespace-nowrap">SPORT STYLE</div>
+    </section>
+    <section class="relative z-10 flex w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 mt-4">
+        <div class="w-full swiper SportStyleSwiper">
+            <div class="swiper-wrapper mb-10">
+                {% for prod in SportStyleGallery %}
+                <div class="swiper-slide">
+                    <div class="relative overflow-hidden flex flex-col bg-white shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+                        <div class="relative overflow-hidden" href="#"> 
+                            <div class="h-56 lg:h-72 3xl:h-80 bg-[url('{{prod.image.url}}')] bg-[length:100%] bg-center"></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbarT"></div>
+        </div>
+    </section>
+    <section class="relative z-10 flex w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 -mb-7 sm:-mb-0">
+        <div class="px-2 md:px-10 py-6 w-full swiper LastAddedSwiper shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+            <div class="absolute bg-white px-14 py-1 z-30 right-0 top-0 text-2xl 3xl:text-3xl text-black font-semibold tracking-[.25em] pt-1 pr-2">LAST ADDED</div>
+            <div class="swiper-wrapper mb-5">
+                {% for prod in LastAddedGallery %}
+                <div class="swiper-slide">
+                    <div class="relative overflow-hidden flex flex-col bg-white shadow-[-5px_7px_17.9px_-4px_rgba(0,0,0,0.25)]">
+                        <div class="relative overflow-hidden" href="detail-page/{{prod.unique_id}}"> 
+                            <img id="2imgSource_{{prod.id}}" class="imgSource_cls h-auto mx-auto" src="{{prod.image.url}}">
+                            <div id="2magnifier_{{prod.id}}" class="magnifier_cls w-36 3xl:w-44 h-56 3xl:h-64">
+                                <div class="absolute w-full h-full bg-white bg-opacity-50" style="z-index: 1000;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    {% block footer %}
+        {% include 'blocks/footer.html' %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".TrendsSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                660: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1550: {
+                    slidesPerView: 5,
+                    spaceBetween: 40,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".ModatelGallerySwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbarT",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                550: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                625: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1050: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1800: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".SportStyleSwiper", {
+            scrollbar: {
+                el: ".swiper-scrollbarT",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                550: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".LastAddedSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                660: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1050: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1920: {
+                    slidesPerView: 5,
+                    spaceBetween: 40,
+                },
+            },
+        });
+    </script>
+    <script>
+        let height_set;
+        setTimeout(
+            () => {
+                if($(window).width() > 768) {
+                    height_set = document.getElementById('MostPopUlar').offsetHeight
+                    document.getElementById('viewAll').setAttribute("style", `height:${height_set}px`)
+                }
+            }, 1 * 100);
+        $(window).resize(function() {
+            if($(window).width() > 768) {
+                height_set = document.getElementById('MostPopUlar').offsetHeight
+                document.getElementById('viewAll').setAttribute("style", `height:${height_set}px`)
+            }
+        });
+    </script>
+    <script>
+        let check = false; //true = mobile; false = not mobile
+        (function(a) {
+            if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+        })(navigator.userAgent || navigator.vendor || window.opera);
+
+        function zoomer(IMG_src, MAG_fil, IMG_bg_src) {
+            var elImg = document.getElementById(IMG_src)
+            var elMag = document.getElementById(MAG_fil)
+            var zoom = 1.3;
+            elMag.style.backgroundImage = `url(${IMG_bg_src})`;
+            var bw = 3;
+            var w = elMag.offsetWidth / 2;
+            var h = elMag.offsetHeight / 2;
+            var showMag = (evt) => {
+                elMag.style.backgroundSize = (elImg.width * zoom) + "px " + (elImg.height * zoom) + "px";
+                var pos, x, y;
+                evt.preventDefault();
+                pos = getCursorPos(evt);
+                x = pos.x;
+                y = pos.y;
+                if(x > elImg.width - (w / zoom)) {
+                    x = elImg.width - (w / zoom);
+                }
+                if(x < w / zoom) {
+                    x = w / zoom;
+                }
+                if(y > elImg.height - (h / zoom)) {
+                    y = elImg.height - (h / zoom);
+                }
+                if(y < h / zoom) {
+                    y = h / zoom;
+                }
+
+                function getCursorPos(e) {
+                    var a, x = 0,
+                        y = 0;
+                    e = e || window.event;
+                    a = elImg.getBoundingClientRect();
+                    x = e.pageX - a.left;
+                    y = e.pageY - a.top;
+                    x = x - window.pageXOffset;
+                    y = y - window.pageYOffset;
+                    return {
+                        x: x,
+                        y: y
+                    };
+                }
+                Object.assign(elMag.style, {
+                    left: (x - w) + "px",
+                    top: (y - h) + "px",
+                    backgroundPosition: "-" + ((x * zoom) - w) + "px -" + ((y * zoom) - h) + "px",
+                });
+            };
+            // Events:
+            elImg.addEventListener("pointermove", showMag);
+            elImg.addEventListener("pointerdown", showMag);
+        }
+        if(check == false) {
+            {% for prod in TrendsPosts %}
+                zoomer(`0imgSource_{{ prod.id }}`, `0magnifier_{{ prod.id }}`, `{{prod.image.url}}`) 
+            {% endfor %}
+        }else{
+            {% for prod in TrendsPosts %}
+                document.getElementById(`0imgSource_{{ prod.id }}`).classList.remove('imgSource_cls');
+            {% endfor %}
+        }
+        if(check == false) {
+            {% for prod in ModatelGallery %}
+                zoomer(`1imgSource_{{ prod.id }}`, `1magnifier_{{ prod.id }}`, `{{prod.image.url}}`) 
+            {% endfor %}
+        }else{
+            {% for prod in ModatelGallery %}
+                document.getElementById(`1imgSource_{{ prod.id }}`).classList.remove('imgSource_cls');
+            {% endfor %}
+        }
+        if(check == false) {
+            {% for i in LastAddedGallery %}
+                zoomer(`2imgSource_{{ i.id }}`, `2magnifier_{{ i.id }}`, `{{i.image.url}}`) 
+            {% endfor %}
+        }else{
+            {% for i in LastAddedGallery %}
+                document.getElementById(`2imgSource_{{ i.id }}`).classList.remove('imgSource_cls');
+            {% endfor %}
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            function adjustClass() {
+                var windowWidth = $(window).width();
+                if (windowWidth < 768) {
+                    document.querySelectorAll('TransporentClass').removeClass('right-0').addClass('left-0');
+                } else {
+                    document.querySelectorAll('TransporentClass').removeClass('left-0').addClass('right-0');
+                }
+            }
+    
+            // Вызов функции при загрузке страницы
+            adjustClass();
+    
+            // Вызов функции при изменении размера окна
+            $(window).resize(function() {
+                adjustClass();
+            });
+        });
+    </script>
+    <script>
+        let height_set_;
+        setTimeout(
+            () => {
+                height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+                document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+            }, 1 * 100);
+        $(window).resize(function() {
+            height_set_ = document.getElementById('REFrightABSblock').offsetHeight
+            document.getElementById('rightABSblock').setAttribute("style", `height:${height_set_}px`)
+        });
+    </script>
+</body>
+</html>

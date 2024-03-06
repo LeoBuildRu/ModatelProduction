@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modatel | главная</title>
+    <link rel="icon" href="{% static '/img/logo.png' %}" type="image/icon type">
+
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- animation alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--- <link href="../static/css/tailwind.css" rel="stylesheet"> -->
+
+    <!-- start connect FONTS section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <!--  end connect FONTS section  -->
+
+    <!-- start settings TCHNO section -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                spacing: {
+                    '102': '25.5rem',
+                    '108': '27rem',
+                    '120': '30rem',
+                    '136': '34rem',
+                    '144': '36rem',
+                    '160': '40rem',
+                    '176': '44rem',
+                    '196': '48rem',
+                    '252': '63rem',
+                    '340': '85rem',
+                    '102px': '408px',
+                    '108px': '432px',
+                    '120px': '480px',
+                    '136px': '544px',
+                    '144px': '576px',
+                    '160px': '640px',
+                    '176px': '704px',
+                    '196px': '768px',
+                    '252px': '1008px',
+                    '340px': '1360px',
+
+                }
+            },
+            screens: {
+                'sm': '660px',
+                'md': '768px',
+                'lg': '1050px',
+                'xl': '1280px',
+                '2xl': '1536px',
+                '3xl': '1970px',
+                '4xl': '2100px',
+                '5xl': '2220px',
+            },
+          }
+        }
+    </script>
+    <!--  end settings TCHNO section  -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+<body style="overflow-x: hidden;" x-data="{ filterCategory_: false, filterMaterial_: false, filterPrice_: false, filterSize_: false, filterColor_: false, infPanelNew: window.innerWidth >= 760, darkBG: false}">
+    {% block header %}
+        {% include 'blocks/header.html' %}
+    {% endblock %}
+
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 md:mt-6 4xl:mt-10"> 
+        <div class="w-full xl:max-w-[75rem] mx-auto flex py-3"><img src="{% static '/img/temporaryStorage/PrivPolicy.jpg' %}" class="w-full fr-fic fr-dib fr-fil"></div>
+    </section>
+
+    <section class="relative z-10 flex flex-col w-full md:px-16 xl:px-32 2xl:px-64 4xl:px-96 5xl:px-120 sm:mt-4 md:mt-6 4xl:mt-10"> 
+        <div class="w-full mx-auto text-xl font-medium" style="font-family: 'Roboto Mono', monospace;">
+            <p class="font-black text-2xl tracking-widest">Политика конфиденциальности сайта MODATEL</p>
+            <p>
+                <br>
+            </p>
+            <p>Последнее обновление: [03.01.2024-02:07]</p>
+            <p>
+                <br>
+            </p>
+            <p>Приветствуем вас на нашем веб-сайте MODATEL. Мы ценим вашу конфиденциальность и защищаем ваши личные данные. В этой политике конфиденциальности мы поясняем, какие данные мы собираем, по какой причине и как мы используем эту информацию.</p>
+            <p>
+                <br>
+            </p>
+            <p class="font-black text-2xl tracking-widest">Сбор информации</p>
+            <p>
+                <br>
+            </p>
+            <p>Мы можем собирать следующие типы информации:</p>
+            <ul class="pl-6 my-6" style="list-style-type: disc;">
+                <li>Личные данные: например, имя, адрес, адрес электронной почты и номер телефона, которые вы предоставляете, когда связываетесь с нами, делаете заказ или регистрируетесь на нашем сайте.</li>
+                <p>
+                    <br>
+                </p>
+                <li>Информация о пользовании: данные о том, как вы взаимодействуете с нашим сайтом, включая информацию о просмотренных страницах, времени нахождения на сайте и другие аналитические данные.</li>
+            </ul>
+            <p class="font-black text-2xl tracking-widest">Использование информации</p>
+            <p>
+                <br>
+            </p>
+            <p>Мы используем собранные данные для следующих целей:</p>
+            <ul class="pl-6 my-6" style="list-style-type: disc;">
+                <li>Предоставление и поддержка наших услуг, включая обработку заказов, обратной связи и обслуживания клиентов.</li>
+                <p>
+                    <br>
+                </p>
+                <li>Анализ того, как наш сайт используется, для улучшения пользовательского опыта и качества наших услуг.</li>
+                <p>
+                    <br>
+                </p>
+                <li>Отправка информации о новых продуктах, специальных предложениях или других мероприятиях, которые, по нашему мнению, могут вас заинтересовать.</li>
+            </ul>
+            <p class="font-black text-2xl tracking-widest">Защита данных</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Мы принимаем меры для защиты ваших личных данных и обязуемся соблюдать все соответствующие законы о конфиденциальности.</p>
+            <p>
+                <br>
+            </p>
+            <p class="font-black text-2xl tracking-widest">Раскрытие информации третьим лицам</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Мы не продаем, не обмениваем и не передаем вашу личную информацию третьим лицам без вашего согласия, за исключением случаев, когда это необходимо для выполнения наших обязанностей перед вами, или если на этом настоящим сайтом будем требовать соответствующих правил и законов.</p>
+            <p>
+                <br>
+            </p>
+            <p class="font-black text-2xl tracking-widest">Ваши права</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Вы имеете право запросить доступ к вашей личной информации, исправить ее, удалить или передать. Если у вас есть вопросы или предложения относительно нашей политики конфиденциальности, пожалуйста, свяжитесь с нами.</p>
+            <p>
+                <br>
+            </p>
+            <p class="font-black text-2xl tracking-widest">Изменения в политике конфиденциальности</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Мы оставляем за собой право изменять эту политику в любое время. Любые изменения будут опубликованы на этой странице.</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Мы рекомендуем периодически просматривать нашу политику конфиденциальности, чтобы быть в курсе обновлений.</p>
+            <p>
+                <br>
+            </p>
+            <p class="font-black text-2xl tracking-widest">Связь с нами</p>
+            <p>
+                <br>
+            </p>
+            <p class="pl-6">Если у вас есть вопросы или предложения относительно нашей политики конфиденциальности, не стесняйтесь связаться с нами через контактную информацию нашего сайта.</p>
+        </div>
+    </section>
+
+    {% block footer %}
+        {% include 'blocks/footer.html' %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

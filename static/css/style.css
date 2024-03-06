@@ -1,0 +1,268 @@
+body {
+	position: relative;
+	overflow-x: hidden;
+	max-width: 100vw;
+}
+
+:root {
+    --swiper-theme-color: #000;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+}
+/*start magnifier CSS section*/
+.imgSource_cls {
+    touch-action: none;
+}
+.magnifier_cls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: no-repeat;
+    border: 4px solid white;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 200;
+    transition: opacity 0.3s;
+}
+.imgSource_cls:hover+.magnifier_cls {
+    opacity: 1;
+}
+/*end magnifier CSS section*/
+
+/*start closing-arrow-animation CSS section*/
+@media (min-width: 1970px) {
+    .crossmark.animateElement {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1970px) {
+    .crossmark.animateElement {
+        width: 33px;
+        height: 33px;
+    }
+}
+
+.crossmark__check.animateElement {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.cross__path.animateElement {
+    stroke: #ffffff;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transform-origin: 50% 50% 0;
+}
+
+.cross__path--right.animateElement {
+    animation: 0.3s ease 0.4s normal forwards 1 running stroke;
+}
+
+.cross__path--left.animateElement {
+    animation: 1s ease 0.4s normal forwards 1 running stroke;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+/*end closing-arrow-animation CSS section*/
+@media (min-width: 0px) and (max-width: 768px) {
+    #categoryBlock{
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1050px) {
+    .FlexWrap{
+        flex-wrap: none;
+    }
+}
+@media (min-width: 1051px) {
+    .FlexWrap{
+        flex-wrap: wrap;
+		display: flex;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1050px) {
+    .FlexCol{
+        flex-direction: column;
+    }
+}
+@media (min-width: 1051px) {
+    .FlexCol{
+        flex-direction: none;
+		display: flex;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1050px) {
+    .FlexCol_{
+		flex-direction: none;
+		display: flex;
+    }
+}
+@media (min-width: 1051px) {
+    .FlexCol_{
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .MarginLA{
+		margin-left: auto;
+		margin-right: auto;
+    }
+}
+@media (min-width: 768px) {
+    .MarginLA{
+        margin-left: auto;
+    }
+}
+
+/*start price-input CSS section*/
+
+input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+}
+
+/*end price-input CSS section*/
+
+/*start scroller settings section*/
+
+.scroller-ziro::-webkit-scrollbar {
+	width: 0;
+}
+	
+/*end scroller settings section*/
+
+/*start emoticon-animation CSS section*/
+.rotate-30-deg {
+	animation: rotate-30-deg-anim 1s infinite;
+}
+
+.pt-2-moving {
+	animation: pt-2-anim 3s infinite;
+}
+
+.change-to-none_1 {
+	animation: take-none-anim_1 3s infinite;
+}
+
+.change-to-none_2 {
+	animation: take-none-anim_2 3s infinite;
+}
+
+@keyframes rotate-30-deg-anim {
+	from {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(30deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes pt-2-anim {
+	from {
+		padding-top: 0px;
+	}
+
+	50% {
+		padding-top: 5px;
+	}
+
+	to {
+		padding-top: 0px;
+	}
+}
+
+@keyframes take-none-anim_1 {
+	from {
+		display: none;
+	}
+
+	20% {
+		display: none;
+	}
+
+	40% {
+		display: none;
+	}
+
+	60% {
+		display: block;
+	}
+
+	80% {
+		display: block;
+	}
+
+	to {
+		display: block;
+	}
+}
+
+@keyframes take-none-anim_2 {
+	from {
+		padding-left: 4.65px;
+		padding-right: 4.65px;
+		display: block;
+	}
+
+	20% {
+		padding-left: 4.65px;
+		padding-right: 4.65px;
+		display: block;
+	}
+
+	40% {
+		padding-left: 4.65px;
+		padding-right: 4.65px;
+		display: none;
+	}
+
+	60% {
+		display: none;
+	}
+
+	80% {
+		display: none;
+	}
+
+	to {
+		display: none;
+	}
+}
+
+/*end emoticon-animation CSS section*/
+
+.moving-text {
+	position: absolute;
+	animation: moveText 10s linear infinite;
+}
+
+@keyframes moveText {
+	0% {
+		transform: translateX(-60%);
+	}
+
+	50% {
+		transform: translateX(60%);
+	}
+
+	100% {
+		transform: translateX(-60%);
+	}
+}
