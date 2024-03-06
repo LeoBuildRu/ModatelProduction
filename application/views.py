@@ -26,17 +26,17 @@ def index_page(request):
 
     AllUnit = []
     MainUnit_ = []
-    checkID(AllUnit, MainUnit_, 1)
+    checkID(AllUnit, MainUnit_, 4)
     MainUnit_ = sorted(MainUnit_, key=lambda x: x.created_date, reverse=True)     
 
     AllUnit = []
     RSideUnit_ = []
-    checkID(AllUnit, RSideUnit_, 2)
+    checkID(AllUnit, RSideUnit_, 3)
     RSideUnit_ = sorted(RSideUnit_, key=lambda x: x.created_date, reverse=True)     
 
     AllUnit = []
     LatestUnit_ = []
-    checkID(AllUnit, LatestUnit_, 4)
+    checkID(AllUnit, LatestUnit_, 1)
     LatestUnit_ = sorted(LatestUnit_, key=lambda x: x.created_date, reverse=True)     
 
     context = {
@@ -57,7 +57,7 @@ def catalog_page(request):
 
     PromoNews = []
     PromoNews_ = []
-    checkID(PromoNews, PromoNews_, 3)
+    checkID(PromoNews, PromoNews_, 2)
     PromoNews_ = sorted(PromoNews_, key=lambda x: x.created_date, reverse=True) 
 
     context = {
@@ -236,17 +236,17 @@ def blog_page(request):
 
     AllUnit = []
     MainUnit_ = []
-    checkID(AllUnit, MainUnit_, 1)
+    checkID(AllUnit, MainUnit_, 4)
     MainUnit_ = sorted(MainUnit_, key=lambda x: x.created_date, reverse=True)  
 
     AllUnit = []
     RSideUnit_ = []
-    checkID(AllUnit, RSideUnit_, 2)
+    checkID(AllUnit, RSideUnit_, 3)
     RSideUnit_ = sorted(RSideUnit_, key=lambda x: x.created_date, reverse=True) 
 
     AllUnit = []
     PromoNews_ = []
-    checkID(AllUnit, PromoNews_, 3)
+    checkID(AllUnit, PromoNews_, 2)
     PromoNews_ = sorted(PromoNews_, key=lambda x: x.created_date, reverse=True) 
 
     #AllUnit = []
