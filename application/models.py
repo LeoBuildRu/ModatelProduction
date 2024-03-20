@@ -42,6 +42,7 @@ class Product(models.Model):
     description = models.TextField()
     сare_instructions = models.TextField(default='')
     created_date = models.DateTimeField(default=timezone.now)
+    views = models.IntegerField(default=0)
 
     Categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
     Color = models.ForeignKey(Color, on_delete=models.CASCADE)

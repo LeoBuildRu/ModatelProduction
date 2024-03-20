@@ -23,6 +23,7 @@ def checkID(ARR1, ARR2, quality):
 # Create your views here.
 def index_page(request):
     products = Product.objects.all()
+    productsMV = Product.objects.all().order_by('-views')
 
     AllUnit = []
     MainUnit_ = []
@@ -44,6 +45,7 @@ def index_page(request):
         'MainUnit': MainUnit_,
         'RSideUnit': RSideUnit_,
         'LatestUnit': LatestUnit_,
+        'productsMV': productsMV,
     }
     return render(request, 'index.html', context)
 
@@ -202,14 +204,18 @@ def filter_data(request):
 
 def detail_page(request, id):
     prod = Product.objects.filter(unique_id = id).first()
+    prod_view = Product.objects.get(unique_id = id)
     similarProd = Product.objects.all()
     lastaddProd = Product.objects.all()
 
+    prod_view.views += 1
+    print(prod_view.views)
 
     context = {
         'prod': prod,
         'similarProd': similarProd,
         'lastaddProd': lastaddProd,
+        'prod_view': prod_view,
     }
     return render(request, 'item-details.html', context)
 
@@ -248,27 +254,6 @@ def blog_page(request):
     PromoNews_ = []
     checkID(AllUnit, PromoNews_, 2)
     PromoNews_ = sorted(PromoNews_, key=lambda x: x.created_date, reverse=True) 
-
-    #AllUnit = []
-    #posts_MainNews_ = []
-
-    #AllUnit = []
-    #posts_LSBarNews_ = []
-
-    #AllUnit = []
-    #posts_RSBarNews_ = []
-
-    #AllUnit = []
-    #posts_PromNews_ = []
-
-    #AllUnit = []
-    #posts_LastNews_ = []
-
-    #checkID(AllUnit, posts_MainNews_, 4)
-    #checkID(AllUnit, posts_LSBarNews_, 6)
-    #checkID(AllUnit, posts_RSBarNews_, 5)
-    #checkID(AllUnit, posts_PromNews_, 7)
-    #checkID(AllUnit, posts_LastNews_, 7)
 
     context = {
         'products': products,
